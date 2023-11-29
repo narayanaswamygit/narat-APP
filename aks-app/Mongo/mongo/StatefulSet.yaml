@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mongodb-test
+spec:
+  serviceName: mongodb-test
+  replicas: 1
+  selector:
+    matchLabels:
+      app: database
+  template:
+    metadata:
+      labels:
+        app: database
+        selector: mongodb-test
+    spec:
+      containers:
+      - name: mongodb-test
+        image: paigesacr.azurecr.io/mongo/mongo-aka-app:latest
+        volumeMounts:
+        - name: mongodb-data
+          mountPath: /dbdata
+      volumes:
+      - name: mongodb-data
+        persistentVolumeClaim:
+          claimName: azure-disk-mongodb
+      nodeSelector:
+        agentpool: appsnodepool            

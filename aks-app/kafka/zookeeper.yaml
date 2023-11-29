@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: zookeeper-deployment-1
+  namespace: default
+spec:
+  serviceName: zoo1
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zookeeper-1  # Change this label to match Service label
+  template:
+    metadata:
+      labels:
+        app: zookeeper-1  # Change this label to match Service label
+    spec:
+      containers:
+      - name: zoo1
+        image: digitalwonderland/zookeeper
+        ports:
+        - containerPort: 2181
+        env:
+        - name: ZOOKEEPER_ID
+          value: "1"
+        - name: ZOOKEEPER_SERVER_1
+          value: zoo1
+      nodeSelector:
+        agentpool: kafkapool
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: zoo1
+  namespace: default
+  labels:
+    app: zookeeper-1  # Change this label to match StatefulSet label
+spec:
+  ports:
+  - name: client
+    port: 2181
+    protocol: TCP
+  selector:
+    app: zookeeper-1  # Change this label to match StatefulSet label
+

@@ -1,0 +1,2 @@
+// initiateReplSet.js
+rs.initiate()

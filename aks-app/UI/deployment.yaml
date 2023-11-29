@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: paiges-ui
+  labels:
+    app: paiges-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: paiges-ui
+  template: 
+    metadata:
+      labels: 
+        app: paiges-ui
+    spec:
+      containers:
+        - name: paiges-ui
+          image: paigesacr.azurecr.io/aks-ui/aks-ui:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8085
+          resources:
+            limits:
+              cpu: 400m
+              memory: 300Mi 
+            requests:
+              cpu: 300m
+              memory: 200Mi 
+          volumeMounts:
+          - name: config-volume
+            mountPath: /usr/src/.env
+            subPath: .env  
+      volumes:
+      - name: config-volume
+        configMap:
+          name: my-configmap
+      nodeSelector:
+        agentpool: appsnodepool 
+--- 
+# Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: paiges-ui-loadbalancer-service
+  labels:
+    app: paiges-ui
+spec:
+  type: LoadBalancer
+  selector:
+    app: paiges-ui
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8085

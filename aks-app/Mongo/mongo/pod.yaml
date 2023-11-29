@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pvc-bind-mongo
+spec:
+  containers:
+  - image: nginx
+    name: busybox
+    volumeMounts:
+    - name: mongodb-data
+      mountPath: /dbdata
+  volumes:
+  - name: mongodb-data
+    persistentVolumeClaim:
+      claimName: azure-disk-mongodb      
+

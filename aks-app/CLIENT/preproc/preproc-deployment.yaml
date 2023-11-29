@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: paiges-preproc-api
+  labels:
+    app: paiges-preproc-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: paiges-preproc-api
+  template: 
+    metadata:
+      labels: 
+        app: paiges-preproc-api
+    spec:
+      containers:
+        - name: paiges-preproc-api
+          image: paigesacr.azurecr.io/preproc/preproc9:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 9100
+          lifecycle:
+            postStart:
+              exec:
+                command: ["/bin/sh", "-c", "sh /app/entrypoint.sh"]
+          resources:
+            limits:
+              cpu: 500m
+            requests:
+              cpu: 400m
+          volumeMounts:
+          - name: client-config-volume
+            mountPath: /app/.env
+            subPath: .env
+          - name: uidata-volume
+            mountPath: /afs
+      volumes:
+      - name: client-config-volume
+        configMap:
+          name: preproc-config
+      - name: uidata-volume
+        persistentVolumeClaim:
+          claimName: my-azurefile                
+      nodeSelector:
+        agentpool: appsnodepool                 
+--- 
+# Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: paiges-preproc-api-loadbalancer-service
+  labels:
+    app: paiges-preproc-api
+spec:
+  type: ClusterIP #NodePort
+  selector:
+    app: paiges-preproc-api
+  ports:
+    - name: http
+      port: 80
+      targetPort: 9100
