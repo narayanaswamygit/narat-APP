@@ -1,0 +1,14 @@
+{
+"SUB_DB_CONN_STRING":"host=127.0.0.1 port=6432 user=paiges_sql@paigessql dbname=paiges",
+"SUB_DB_CONN_STRING1":"dbname=paiges user=paiges_sql@paigessql host=paigessql.postgres.database.azure.com password=Welcome@123 port=5432",
+"SUB_PVT_ENCRYPT_KEY":"vK4GdiPqhxfImPVSP50ZBM2PaFF3807a_wGX12GR7SQ=",
+"AUTH_TKN_EXP":"https://tokenexpiration.centralindia-1.eventgrid.azure.net/api/events",
+"AUTH_TKN_EXP_KEY":"2tFPxFVxDroSemdM6YrRJJDdIFZ5TGvEOJLgRuOiBkw=",
+"AUTH_TKN_EXP_TOPIC":"/subscriptions/3d34cc1f-baa0-4d2e-80b3-95a1834afe2f/resourceGroups/RG-TAPP/providers/Microsoft.EventGrid/topics/tokenExpiration",
+"SERVICE_PRINCIPAL": "ZTJmODFhMzktNjA2ZC00M2VhLTg3NTMtM2Y5NjJmMzBmZDk5O1FzSThRflNTbElWVTVGNk5xcEtYMGtsWnFpTlFEZGJmbDQuNm5kZHE7MTRlZTA0MDMtNDYxMy00NzNhLWJhNWEtMDk1YWY3MzVkNjEy",
+"SECRET_VAULT": "SEC41e7c36c",
+"EXTERNAL_API_PORT":8194,
+"blob_access_key":"gAAAAABktmJz3-KJHqRjPtQgvv8WJV_Vsnhw8Qi3bi_9nXKZBZF7ivbTXfB_rVitE_sxR_vpYlojFmdTurDcBlx7GcDTMR3GHp9B1q-9HAFV2MG5C4LJSVD8GdGzYq0sRnxSXQOLQNaL-I4NvHMDs1jA_WJtxiC0xG7hSKL4ULmSRqoX35hmPL_kj1SqYmeDSPrs3J_9z3XT",
+"account-name": "submasterstorage",
+"KEY": "w5r7iPfur5y9ic0cwqmxc1o7fvXWNRaCg3EcN7nGIw8="
+}

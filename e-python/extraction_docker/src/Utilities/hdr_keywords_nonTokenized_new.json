@@ -1,0 +1,1107 @@
+{
+	"lblInvoiceNumber": [
+		"invoice no",
+		"invoice number",
+		"invoice serial number",
+		"bill no",
+		"order number",
+		"tax invoice no",
+		"bill number",
+		"tax invoice cum token number",
+		"invoice id",
+		"inv no",
+		"invoice noand",
+		"gst inv no",
+		"document no",
+		"supplier invoice",
+		"original invoice id",
+		"sap document no",
+		"bill of supply"
+		
+	],
+	"lblInvoiceNumber1": [
+		{
+			"0.6": [
+				"invoice","billing document","sap document","inv"
+			],
+			"0.4": [
+				"number",
+				"gst","id","no","original"
+			],
+			"exclude":["tax","amount","amt","total","so no","dc no","po no",
+			"gross","net","e-way","waybill","eway","way","po","gstin","phone no",
+			"supply","ind","inr","mobile no","purchase order","grn","invoice date","eway bill no","order no","buyers order no","ref doc","invoice amt","po number","lading","time","irn","eway bill no"]
+		}
+	],
+
+	"lblInvoicedate": [
+		"invoice date",
+		"bill date",
+		"billing date",
+		"original bill date",
+		"inv date",
+		"dated",
+		"date of invoice",
+		"date of tax invoice",
+		"date of issue",
+		"issue date",
+		"document date",
+		"invoice dt",
+		"credit memo date",
+		"inv dt"
+	],
+	"lblInvoicedate1": [
+		{
+			"0.3": [
+				"invoice",
+				"inv",
+				"bill"
+			],
+			"0.7": [
+				"date",
+				"dated",
+				"dt"
+			],"exclude":["due","payment","ack","printed","acknowledge","acknowledgement","grn","received","goods","total","gross","net",
+				    "modified","e-way","waybill","eway","way","po","gr/rr","dc","lr","eta","issue"]
+		}
+	],
+
+	"lblPOdate": [
+		"order date",
+		"po date",
+		"purchase order date",
+		"customer po#",
+		"date"
+	],
+	
+	"lblPOdate1": [
+		{
+			"0.4": [
+				"order",
+				"po"
+			],
+			"0.6": [
+				"date",
+				"dated",
+				"dt"
+			],"exclude":["due","payment","ack","printed","acknowledge","acknowledgement","grn","received","goods","total","gross","net",
+				    "modified","e-way","waybill","eway","way","gr/rr","dc","lr","invoice","inv","bill of supply","bill","ship","request","req","delivery","required","print","effective","revision","start"]
+		},
+		{
+			"0.2": [
+				"order"
+			],
+			"0.3": [
+				"purchase"
+			],
+			"0.5": [
+				"date",
+				"dated",
+				"dt"
+			],"exclude":["due","payment","ack","printed","acknowledge","acknowledgement","grn","received","goods","total","gross","net",
+				    "modified","e-way","waybill","eway","way","gr/rr","dc","lr","invoice","inv","bill of supply","bill","ship","request","req","delivery","required","print","effective","revision","start"]
+		}
+	],
+	"lblVendorGSTIN": [
+		"gstinuin",
+		"gstin",
+		"gst no",
+		"gstin number",
+		"gstin no",
+		"vat registration no",
+		"tax id",
+		"companys gst",
+		"gst registration no",
+		"gstin number"
+	],
+	"lblPaymentTerms": [
+		"modeterms of payment",
+		"payment terms",
+		"payment term",
+		"credit terms",
+		"terms of delivery and payment",
+		"terms  conditions",
+		"payment condition",
+		"invoice terms",
+		"modeterms payment",
+		"terms of payment",
+		"payment type & terms"
+
+	],
+	"lblVendorEmail": [
+		"email",
+		"email remittance to"
+	],
+	"lblPoNumber": [
+		"extern order no",
+		"web or no",
+		"lpo no",
+		"po number",
+		"buyers order no",
+		"buyers po no",
+		"buyers po number",
+		"buyer po",
+		"buyer po no",
+		"buyer po number",
+		"po no",
+		"po",
+		"pono",
+		"p o no",
+		"customer po",
+		"po no date",
+		"po no and date",
+		"po number date",
+		"po number and date",
+		"purchase order no date",
+		"purchase order no and date",
+		"purchase order number date",
+		"purchase order number and date",
+		"purchase order",
+		"purchase order no",
+		"order no",
+		"order reference",
+		"order reference number",
+		"order reference no",
+		"order ref number",
+		"order ref no",
+		"customer po number",
+		"customer po no",
+		"cust po number",
+		"custpo",
+		"cust po",
+		"your ref po no",
+		"purchase order number",
+		"po nos",
+		"po no & date",
+		"cust order no",
+		"customer order number",
+		"customer order no",
+		"your order number",
+		"your po reference",
+		"your order",
+		"work order no",
+		"work order#",
+		"work ordernumber",
+		"work order",
+		"work order #",
+		"work order number",
+		"wo no",
+		"wo number",
+		"wono",
+		"w o no",
+		"wo #",
+		"wo",
+		"CTM ref no",
+		"CTM order no"
+	],
+	"lblPoNumber1": [
+		{
+			"0.65": [
+				"po"
+				
+			],
+			"0.35": ["no","number"
+				
+			],"exclude":["phone","pan no","invoice","tax","amount","amt","total","date","gross","net","e-way","waybill","eway","way","gstin","vendor","price","ship","box","oh","attn","office","ack","cin","rtgs code","grn","pan/it","phone","customer code","kno","ph no","forms","sales order","account no"]
+		},
+		{
+			"0.5":["purchase","buyers","po","customer"],
+			"0.3":["order"],
+			"0.2":["no",
+				"number"
+					],"exclude":["phone","pan no","invoice","tax","amount","amt","total","date","gross","net","e-way","waybill","eway","way","gstin","vendor","price","ship","box","oh","attn","office","cin","rtgs code","grn","pan/it","phone","customer code","kno","ph no","forms","sales order","account no"]
+			
+		},
+		{
+			"0.6": [
+				"order","ord","purchase"
+			],
+			"0.4": ["no","number"
+				
+			],"exclude":["phone","pan no","invoice","tax","amount","amt","total","date","gross","net","e-way","waybill","eway","way","gstin","vendor","price","ship","box","oh","attn","office","ack","cin","rtgs code","grn","pan/it","phone","customer code","kno","ph no","forms","sales order","account no"]
+		}
+	],
+	
+		
+	"lblactualFCRDate": [
+		"actual fcr date"
+	],
+	"lblactualSailingDate": [
+		"actual sailing date"
+	],
+	"lblvesselName&voyage": [
+		"vessel name and voyage",
+		"vessel name &"
+	],
+	"lbltotalGrossWeight": [
+		"total g.w",
+		"total gr.wt",
+		"total gross wt"
+	],
+	"lbltotalGrossWeight1": [
+			{
+			"0.15": [
+				"total"
+			],
+			"0.85": [
+				"g.w",
+				"gross wt",
+				"gr.wt"
+			],"exclude":["qty","cbm","n.w","cartons","invoice","value","net","ctns","volume"]
+		}
+	],
+	
+	"lbltotalNetWeight": [
+		"total n.w",
+		"total net.wt"
+	],
+	"lbltotalNetWeight1": [
+		{
+			"0.15": [
+				"total"
+			],
+			"0.85": [
+				"n.w","net.wt"
+			],"exclude":["qty","cbm","g.w","cartons","invoice","value","gross","gr","ctns","volume"]
+		}
+	],
+	"lbltotalCubicMeter": [
+		"total cbm"
+	],
+	"lbltotalCubicMeter1": [
+		{
+			"0.15": [
+				"total"
+			],
+			"0.85": [
+				"cbm"
+			],"exclude":["qty","g.w","n.w","cartons","invoice","value","gross","gr","net","ctns"]
+		}
+	],
+	"lbltotalQuantity": [
+		"total qty"
+	],
+	"lbltotalQuantity1": [
+		{
+			"0.15": [
+				"total"
+			],
+			"0.85": [
+				"qty"
+			],"exclude":["cbm","g.w","n.w","cartons","invoice","value","gross","gr","net","ctns"]
+		}
+	],
+	"lbltotalCartons": [
+		"total cartons"
+	],
+
+	"lbltotalCartons1": [
+		{
+			"0.15": [
+				"total"
+			],
+			"0.85": [
+				"cartons","ctns"
+			],"exclude":["qty","cbm","g.w","n.w","invoice","value","gross","gr","net","volume"]
+		}
+	],
+	"lblcountryofOrigin": [
+		"country of origin",
+		"country of origin of goods"
+	],
+	
+	"lblcountryofOrigin1": [
+		{
+			"0.20": [
+				"country"
+			],
+			"0.2": [
+				"of"
+			],
+			"0.8": ["origin",
+				"origin of goods"
+			],"exclude":["destination"]
+		}
+	],
+
+
+	"lblcountryofDestination": [
+		"country of destination",
+		"country of destination of goods"
+	],
+	
+	
+
+
+	"lblplaceofDelivery": [
+		"final place of delivery"
+	],
+	
+	"lblplaceofDelivery1": [
+		{
+			"0.20": [
+				"final place"
+			],
+			"0.2": [
+				"of"
+			],
+			"0.8": ["delivery"
+			],"exclude":["origin"]
+		}
+	],
+	"lblincoterm&place": [
+		"incoterm & place",
+		"terms of shipment"
+	],
+
+	"lblcontainer": [
+		"container(s)",
+		"number",
+		"container#",
+		"direct billing",
+		"cntr no",
+		"outgate ingate conatiner"
+	],
+	"lblloadNo": [
+		"load",
+		"chr load"
+	],
+
+	"lbllocation": [
+		"destination",
+		"dest",
+		"port of delivery",
+		"pod",
+		"pod/eta",
+		"final destination",
+		"f.dest",
+		"location",
+		"return location"
+	],"lbllocation1": [
+		{
+			"0.7": [
+				"destination","dest","pod","location"
+			],
+			"0.3": [
+				"final","f","return"
+			],"exclude":["qty","cbm","g.w","n.w","invoice","value","gross","gr","net","volume"]
+		}
+	],
+	"lblTotalAmount": [
+		"total amount",
+		"grand total",
+		"balance due",
+		"amount due",
+		"total usd",
+		"invoice total",
+		"total invoice value",
+		"total inr",
+		"total amount due",
+		"total due",
+		"gross amount",
+		"bill total",
+		"you pay this amount",
+		"total order",
+		"net to pay",
+		"total balance due",
+		"amount payable after roundoff",
+		"amount payable usd ic",
+		"total amount after tax",
+		"gross invoice amount",
+		"net amount",
+		"rounded total",
+		"net invoice amount"
+	],
+	"lblTotalAmount1": [
+		{
+			"0.7": [
+				"invoice","grand","bill","rounded","net"],
+			"0.3": [
+				"total","amount","amt"
+			],"exclude":["date","tax","no","number","num","wt","weight","wgt","g.w","n.w","cbm","cartons","quantity","qty","phonenumber","billing account","balance forward","previous balance"]
+		},
+		{
+			"0.7":["balance","total"]
+			,"0.3":["due"],
+			"exclude":["date","tax","g.w","n.w","cbm","cartons","quantity","qty","phonenumber","billingaccount","balance forward","previousbalance"]
+		},
+		{
+			"0.4":["net","total"],
+			"0.30":["payable"],
+			"0.3":["amount","amt","g.w","n.w","cbm","cartons","quantity","qty"],
+			"exclude":["phone number","billing account","balance forward","previous balance"]
+			
+		}
+	],
+	"lblAccount/CustomerNo": [
+		"billing Account",
+		"customer reference",
+		"account number",
+		"customer",
+		"current account no",
+		"account #",
+		"account",
+		"account no",
+		"customer no",
+		"customer #",
+		"customer id",
+		"customer account#",
+		"benificiary account",
+		"client number",
+		"general acct",
+		"acct#",
+		"acct number",
+		"a/c number",
+		"account id",
+		"customer credit account",
+		"customer",
+		"client id",
+		"customer account",
+		"bank checking account #",
+		"credit account"
+		
+	],
+	"lblAccount/CustomerNo1": [
+		{
+			"0.7": [
+				"account","acct","client","account #"
+			],
+			"0.2": [
+				"number",
+				"no",
+				"reference",
+				"bank checking"
+			],
+			"exclude":		["accounting","fax","concur","attn","service","payable","card","premium","care","invoice","name","accounts","invoice","accountinginformation","at","company","serve","in","care","boston","swift code"]
+		},
+		{
+			"0.75": [
+				"customer","customer #"
+			],
+			"0.25": [
+				"number","id","no"
+			],
+			"exclude":		["accounting","fax","concur","attn","service","payable","card","premium","care","invoice","name","accounts","invoice","accountinginformation","at","company","serve","in","care"]
+		}
+	],
+	"lblpoTotalAmount": [
+		"total amount",
+		"grand total",
+		"balance due",
+		"amount due",
+		"total usd",
+		"invoice total",
+		"total invoice value",
+		"total inr",
+		"total amount due",
+		"total due",
+		"gross amount",
+		"bill total",
+		"you pay this amount",
+		"total order",
+		"balance",
+		"net to pay",
+		"total balance due",
+		"amount payable after roundoff",
+		"amount payable usd ic",
+		"total amount after tax",
+		"gross invoice amount",
+		"net amount",
+		"rounded total",
+		"net invoice amount"
+	],
+	"lblpoTotalAmount1": [
+		{
+			"0.7": [
+				"total","price","cost","amount","amt"
+			],
+			"0.3": [
+				"po",
+				"order",
+				"purchase"
+			],
+			"exclude":["tax","rate","%","sub"]
+		}
+	],
+	"hdr_poNumber":
+	[
+		"client po #"
+	],
+	"hdr_itemQuantity": [
+		"quantity",
+		"shipped",
+		"ordered",
+		"qty shipped",
+		"qty ordered",
+		"invoice quantity",
+		"order qty",
+		"no of units",
+		"quantity shipped",
+		"delivered quantity"
+	],
+	"hdr_unitPrice": [
+		"unit price",
+		"price each",
+		"unit rate",
+		"rate per unit",
+		"priceunit",
+		"net price",
+		"unitprice",
+		"price unit",
+		"rate rs",
+		"rate per item"
+	],
+	"hdr_itemValue": [
+		"extended price",
+		"ext price",
+		"amount rs",
+		"total price",
+		"extended net price",
+		"line total"
+	],
+	
+	"lblbrandName": [
+		"buyer"
+	],
+	
+	"lblmanufacturerName": [
+		"manufacture",
+		"manufacture(maker)"
+		
+	],
+
+	"lblBillingAddress": [
+		"bill to",
+		"invoice to",
+		"sold to",
+		"billed to",
+		"buyer if other than consignee",
+		"billing address",
+		"bill to party",
+		"bill to address"
+	],
+	"hdr_itemDescription": [
+		"description",
+		"description of goods",
+		"item description",
+		"particulars",
+		"item number  description",
+		"description of services",
+		"item  description",
+		"description of goods and services",
+		"summary of charges",
+		"material description"
+	],
+	"hdr_HSNCode": [
+		"hsnsac",
+		"hsn code",
+		"hsnsac code",
+		"sachsn codes",
+		"sac code",
+		"hsn sac",
+		"hsn sac code"
+	],
+	"lblSubTotal": [
+		"subtotal",
+		"sub total",
+		"taxable value",
+		"sales amount",
+		"sub total amt",
+		"taxable amount",
+		"itemstotal",
+		"itemsubtotal"
+	],
+	"hdr_UOM": [
+		"per",
+		"uom",
+		"unit measure",
+		"unit measurement"
+	],
+	"lblTaxAmount": [
+		"sales tax",
+		"total tax amount",
+		"total tax",
+		"tax amount",
+		"total taxes",
+		"total sales tax"
+	],
+	"lblCGSTAmount": [
+		"cgst",
+		"cgst output",
+		"cgst payable",
+		"cgst tax",
+		"cgst amount",
+		"central tax amount",
+		"cgst amt",
+		"output cgst",
+		"cgst %",
+		"add cgst",
+		"central tax",
+		"central gst",
+		"cgst %"
+	],
+	"lblCGSTAmount1": [
+		{
+			"0.7": [
+				"cgst"
+			],
+			"0.3": [
+				"amount",
+				"amt",
+				"value",
+				"payble"
+			],"exclude":["tax","rate","%"]
+		},
+		{
+			"0.6": [
+				"central"
+			],
+			"0.3": [
+				"tax"
+			],
+			"0.1": [
+				"amount",
+				"amt",
+				"value"
+			],"exclude":["rate","%"]
+		}
+	],
+	"lblSGSTAmount": [
+		"sgst",
+		"sgst output",
+		"sgst payable",
+		"sgst tax",
+		"sgst amount",
+		"state tax amount",
+		"sgst amt",
+		"output sgst",
+		"sgst %",
+		"sgst %",
+		"add sgst",
+		"state tax",
+		"state gst"
+	],
+	"lblSGSTAmount1": [
+		{
+			"0.7": [
+				"sgst"
+			],
+			"0.3": [
+				"amount",
+				"amt",
+				"value",
+				"payble"
+			],"exclude":["tax","rate","%"]
+		},
+		{
+			"0.6": [
+				"state"
+			],
+			"0.3": [
+				"tax"
+			],
+			"0.1": [
+				"amount",
+				"amt",
+				"value"
+			],"exclude":["rate","%"]
+		}
+	],
+	"hdr_itemValue": [
+		"extended price",
+		"ext price",
+		"amount rs",
+		"total price",
+		"extended net price",
+		"line total"
+	],
+	"hdr_IGSTAmount": [
+		"igst",
+		"igst output",
+		"igst tax",
+		"igst amount",
+		"integrated tax amount",
+		"output igst",
+		"igst amount",
+		"integrated tax",
+		"igst %",
+		"igst amt",
+		"igst amount",
+		"integrated gst"
+	],
+	"hdr_CGSTAmount": [
+		"cgst",
+		"central tax amount",
+		"central tax cgst"
+	],
+	"hdr_SGSTAmount": [
+		"sgst",
+		"sgst inr",
+		"state tax amount",
+		"state taxsgst",
+		"sgst amt",
+		"sgst tax amt"
+	],
+	"hdr_taxAmount": [
+		"total tax amount",
+		"tax amount",
+		"sales tax"
+	],
+	"lblShippingAddress": [
+		"ship to",
+		"despatch to",
+		"shipped to",
+		"consignee",
+		"shipping address",
+		"deliver to",
+		"delivery address",
+		"consignee address",
+		"place of supply"
+	],
+	"lblIGSTAmount": [
+		"igst",
+		"igst output",
+		"igst payable",
+		"igst tax",
+		"igst amount",
+		"integrated tax amount",
+		"igst amt",
+		"output igst",
+		"igst %",
+		"igst %",
+		"add igst",
+		"integrated tax",
+		"integrated gst"
+	],
+	"lblIGSTAmount1": [
+		{
+			"0.7": [
+				"igst"
+			],
+			"0.3": [
+				"amount",
+				"amt",
+				"value",
+				"payble"
+			],"exclude":["tax","rate","%"]
+		},
+		{
+			"0.6": [
+				"integrated"
+			],
+			"0.3": [
+				"tax"
+			],
+			"0.1": [
+				"amount",
+				"amt",
+				"value"
+			],"exclude":["rate","%"]
+		}
+	],
+	"lblDueDate": [
+		"due date",
+		"pay by date",
+		"invoice due date",
+		"payment due date",
+		"payment due",
+		"payment due on"
+	],
+	"lblDueDate1": [
+		{
+			"0.7": [
+				"due"
+			],
+			"0.3": [
+				"payment",
+				"date"
+			],
+			"exclude":["invoice","bill","rate","inv","terms","e.t.a","billing","ship","issue","print","onboard","eta","pickup","arrival","departure","delivery","available",
+"freetime","etd","ata","atd","start","end","ending","period"]
+		}
+	],
+	"lblFreightAmount": [
+		"freight terms",
+		"freight charges",
+		"ocean freight",
+		"freight value",
+		"freight  service fees",
+		"freight charge",
+		"freight amount",
+		"transport charges",
+		"transport charge",
+		"transport fees",
+		"transport",
+		"freight outside state"
+	],
+	"lblVendorName": [
+		"name and address of supplier",
+		"supplier name",
+		"beneficiary name"
+	],
+	"hdr_itemCode": [
+		"item number",
+		"item code",
+		"item no  internal part no",
+		"part number",
+		"job number",
+		"product code",
+		"sku",
+		"detail number",
+		"batch no",
+		"docket no",
+		"catalog number"
+	],
+	"lblCurrency": [
+		"currency",
+		"invoice currency",
+		"billing currency",
+		"currency in",
+		"payment in"
+	],
+	"lblDiscountAmount": [
+		"disc %",
+		"discount amount",
+		"less discount",
+		"tariff discount",
+		"discounts other credits  charges",
+		"total disc",
+		"discount rs",
+		"total discount",
+		"dis amt",
+		"all.disc"
+	],
+	"lblDiscountAmount1": [
+		{
+			"0.7": [
+				"discount",
+				"disc","dis"
+			],
+			"0.3": [
+				"amount",
+				"amt",
+				"value"
+			]
+		}
+	],
+	"lblVendorAddress": [
+		"remit to address",
+		"supplier name  address",
+		"name and address of supplier"
+	],
+	"lblVATTotal": [
+		"vat inr",
+		"total vat amount",
+		"total vat on invoice"
+	],
+	"lblInsuranceAmount": [
+		"insurance%",
+		"insurance"
+	],
+	"lblCessAmount": [
+		"cess",
+		"cess amount",
+		"cess total"
+	],
+	"lblCessAmount1": [
+		{
+			"0.7": [
+				"cess"
+			],
+			"0.3": [
+				"amount",
+				"amt",
+				"value",
+				"total"
+			],"exclude":["rate","excess"]
+		}
+	],
+	"lblAddlCessAmount": [
+		"add cess",
+		"addl cess",
+		"addcess",
+		"addlcess",
+		"additional cess",
+		"additionalcess"
+	],
+	"lblAddlCessAmount1": [
+		{
+			"0.450": [
+				"additional","addl","add"
+			],
+			"0.45": [
+				"cess"
+			],
+			"0.1": [
+				"gst","value","amount","amt"
+				
+			],"exclude":["rate"]
+		}
+	],
+	"lblCessRate": [
+		"cess%",
+		"cess rate"
+	],
+	"lblTCSAmount": [
+		"tcs",
+		"tcs amount",
+		"tcs%"
+	],
+	"lblTCSAmount1": [
+		{
+			"0.7": [
+				"tcs"
+			],
+			"0.3": [
+				"amount",
+				"amt",
+				"value",
+				"total"
+			],"exclude":["rate","gross","disc","taxable","discount","price"]
+		}
+	],
+	"CurrencyCode": [
+		"aud",
+		"zar",
+		"hkd",
+		"cad",
+		"usd",
+		"jpy",
+		"gbp",
+		"inr",
+		"bzr",
+		"cny",
+		"sek",
+		"eur",
+		"nzd",
+		"rupees"
+	],
+
+	"lblpatientName": [
+		"patient name",
+		"name"
+		
+		
+	],
+	"lblgender": [
+		"gender",
+		"sex"	
+		
+	],
+
+	"lblage": [
+		"age",
+		"aged"
+		
+	],
+
+
+	"lblreferenceBy": [
+		"referral",
+		"ref by dr",
+		"referred by",
+		"source",
+		"ref drs name",
+		"ref by"	
+		
+	],
+	"lblBillingNames": [
+		"bill to",
+		"receiver",
+		"billed to",
+		"sold to",
+		"buyer",
+		"bill to customer",
+		"billing address",
+		"details of receiver",
+		"supplier",
+		"payment agent",
+		"supplier (or payment agent)",
+		"paying agent"
+		
+	],
+	
+	
+	"companyNameList": [
+		"private limited",
+		"private ltd",
+		"pvt ltd",
+		"india limited",
+		"technologies pvt",
+		"technologies",
+		"enterprise",
+		"holding",
+		"restaurant",
+		"hotel",
+		"beverage",
+		"systems",
+		"sourcing ltd",
+		"llp",
+		"auto",
+		"accesories",
+		"casting",
+		"logistics",
+		"breweries",
+		"hospital",
+		"pharmacy",
+		"medicals",
+		"agro",
+		"foods",
+		"farms",
+		"reseach",
+		"co ltd",
+		"services ltd"
+
+	],
+	"lblShippingNames": [
+		"ship to",
+		"consignee",
+		"Shipped",
+		"shipped to",
+		"shipping address",
+		"place of supply",
+		"delivery address",
+		"delivery"
+	],
+	"addressNameList": [
+		"survey",
+		"plot",
+		"door",
+		"street",
+		"block",
+		"cross",
+		"road",
+		"estate",
+		"industrial",
+		"indl",
+		"address",
+		"addr",
+		"building",
+		"opp",
+		"opposite",
+		"village",
+		"godown",
+		"complex",
+		"landmark",
+		"aveneue",
+		"post",
+		"attn",
+		"vegas",
+		"suite",
+		"rd",
+		"bldg",
+		"post",
+		"tower",
+		"floor",
+		"stage",
+		"beach",
+		"box",
+		"blvd",
+		"north",
+		"south",
+		"west",
+		"east",
+		"boulevard",
+		"florence"
+	]
+}
