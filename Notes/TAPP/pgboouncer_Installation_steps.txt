@@ -1,0 +1,27 @@
+Create the apt repository configuration file for adding the PGDG apt server:
+=============================================================================
+sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+
+Import the repository signing key:
+===================================
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
+apt update
+apt install pgbouncer -y
+cd /etc/pgbouncer
+
+vim userlist.txt
+enter Insert mode and update values in below format
+"Admin-Username" "Password"
+save and exit 
+
+
+Also Please change the pgbouncer.ini
+
+sudo apt-get install postgresql-client
+
+Open port 6432 in Virtual Machine
+
+copy root.crt in /etc folder  --> If SSL enabled in pgbouncer config file otherwise disable SSL no need of root.crt
+
+
+ConnectionString to check : psql -h 127.0.0.1 -U swginsta_admin@swginstapaiges -d swginsta_pAIges -p 6432

@@ -1,0 +1,156 @@
+#env import
+#env configured
+tapp_listen_change_streams=true
+tapp_result_size=50
+tapp_confidence_threshold=70
+tapp_auto_processing=true
+tapp_auto_extraction=false
+tapp_preprocessor_api_host=http://20.219.188.173:7777
+tapp_extraction_api_host=http://20.204.175.82:9200
+tapp_storage_provider=localblob
+tapp_storage_access_key=tapp2data
+tapp_storage_access_secret=C38zpM1CfufDmqcelnI/VvjIUpB6Fyoj8QUtsKrFs4f7pAKCpzMFRClSOhJW1thKSOdZB7Jm3OWughlSKEsuxg==
+tapp_storage_container=import
+tapp_storage_asset_container=assets
+tapp_storage_sampleInvoices_container=sampleinvoices
+tapp_storage_region=
+
+#database name and host
+tapp_mongodb_host=mongodb://20.235.120.179:27017
+tapp_mongodb_db_name=swiggy_db
+tapp_api_host=https://www.scootsypaiges.com
+
+#rpa starts here
+rpa_integration_mode=cloud
+rpa_authentication_domain= https://account.uipath.com/
+rpa_orchestrator_domain=https://platform.uipath.com/
+rpa_job_ids=
+
+#RPA Cloud integration configuration keys
+rpa_account_logical_name=taosmyhlxp
+rpa_tenant_logical_name=TAODefaulta1n6222679
+rpa_tenant_organization_id=100469
+rpa_refresh_token=lkVBXp5KOVt-AbUfEDqUFRCdo0DfgAwdnLDWMqIm057Bl
+rpa_client_id=8DEv1AMNXczW3y4U15LL3jYf62jK93n5
+
+#RPA On-Premise integration configuration keys
+rpa_tenant_name=
+rpa_user_name=
+rpa_password=
+tapp_review_submit_url=
+
+#Network paths - Root location
+tapp_localBlobStorage=/mnt/swginstaproddrive
+
+#static files url
+tapp_images_static_url=/static
+
+#download results
+tapp_download_results_api=http://20.219.188.173:7777/download/results
+downloadResultPath=/downloads/
+
+tapp_invoice_tiff_url=http://127.0.0.1:8081
+query_add_workflow_API_URL=http://180.151.86.53:90/api/TAPP/SaveTappData
+query_delete_workflow_API_URL=http://180.151.86.53:90/api/DeleteTAPP/DeleteQueryData
+
+#mongo atlas
+#databaseUrl=mongodb+srv://kanak:kanak_optimal@cluster0.shybo.mongodb.net/paiges_kgs?retryWrites=true&w=majority&useNewUrlParser=true&useUnifiedTopology=true
+mongo_Atlas_Host_Url=mongodb+srv://pAIges_DB:r1JliLnVh37DzRux@cluster0.fbbiy.mongodb.net/demo_db?retryWrites=true&w=majority&useNewUrlParser=true&useUnifiedTopology=true
+
+#others
+clientAddress=https://www.scootsypaiges.com
+emailServiceProvider=gmail
+senderEmailId=yourgamil@gmail.com
+senderPassword=password
+
+#for send email
+emailEndPoint=https://paigessendemail.centralindia-1.eventgrid.azure.net/api/events
+mailSendKey=iVEOjpKIERR9gvo4psYRGpOMD3wRbEucerYHGdYxbSU=
+
+#encryption/decryption
+encryptionKey=PAIGESISPOWEREDBYTAOAUTOMATION2022
+decryptionTokenId=vtucupWt0pZBVYcPVgzQ/A==
+
+#extraction-assist
+formatIdentifierRootPath=http://20.219.188.173:6666/format_identifier/
+pathFinderRootPath=http://20.219.188.173:6666/path_finder/
+pathFinderCorrectionsPath=http://20.219.188.173:6666/corrections/
+RAISE_TICKET_EMAIL=amit.rajan@taoautomation.com
+
+#common
+ALERT_TIMEOUT=5000
+AUTO_REFRESH_IN=5000
+HOW_IT_WORKS_URL=https://www.taoautomation.com/what-we-do/productized-solutions/tao-paiges/
+maximumAllowedPages=50
+maximumFileSizeLimit=5
+adminEmailId=pAIges.admin@taoautomation.com
+DEFAULT_EA_TIMEGAP=90
+
+#reviewer
+ACTIVITY_TIME_REVIEWER=300
+ALERT_DISSMISS_REVIEWER=60
+AUTO_UNLOCK_DOCUMENT_IN=30
+
+#client-specific
+SIGNUP_PAGE_VISIBILITY=0
+DASHBOARD_VISIBILITY=0
+PROCESSING_VISIBILITY=1
+SETTINGS_VISIBILITY=1
+ACTIONS_VISIBILITY=0
+POINT_AND_SHOOT_VISIBILITY=0
+EXTRACTION_ASSIST_VISIBILITY=0
+EXTERNAL_LOGS_VISIBILITY=1
+DETAILED_LOGS=1
+LOGS_LENGTH=2000
+DAILY_CONSUMPTION_LIMIT_VISIBILITY=0
+FAQ_PAGE_VISIBILITY=0
+CARDVIEW_VISIBILITY=0
+VIEWER_ROLE_VISIBILITY=0
+TIPS_VISIBILITY=0
+LINE_ITEMS_VISIBILITY=0
+ADMIN_UPLOAD_VISIBILITY=0
+
+#Admin Role Limitation
+ALL_ROLES_VISIBILITY_FOR_ADMIN=0
+
+#session
+SESSION_EXPIRE_TIME=2
+SESSION_EXPIRE_TIME_UNIT=hours
+
+#mergeTometadata
+tapp_merge_result_metadata=invoiceNumber,invoiceDate,totalAmount
+
+#business Rule Validation
+businessRuleValidation_APIRootPath=http://20.219.188.173:6666/
+callbackUrlForValidationAPI=http://20.204.106.28:80
+BUZ_RULE_API_VISIBILITY=1
+
+#VAPT
+INVALID_FORM_TAGS=["<script", "/script", "script>", "<title", "/title", "title>", "<import", "/import", "import>", "<link", "/link", "link>"]
+
+#upload related
+tapp_orgtype_options=[{"orgTypeId":"ORG_001", "orgType":"Swiggy"}]
+tapp_doctype_options=[{"docTypeId":"DOC_001", "docType":"Invoice"}]
+
+#Sub folders - list all sub folders in the above directory. Also include preprocessor directory in this list.
+tapp_localFileTypesAllowed={"pdf":"application/pdf","tiff":"image/tiff"}
+tapp_localSubFolders_allowed={"import":"/import/","assets":"/assets/","sampleinvoices":"/sampleinvoices/","preprocessor":"/preprocessor/","downloads":"/downloads/"}
+
+#dashboard
+organizationConfig={"orgName":"KGS", "orgID":"19012", "expiry":"June 10 2022", "pageQuota":10}
+
+#black-listed domains
+BLACKLISTED_DOMAINS=["gmail","outlook", "prontonmail", "aol", "zoho", "iCloud", "yahoo", "gmx"]
+
+#not-extracted fields list
+unExtractedfields=["invoiceNumber", "poNumber", "invoiceDate", "totalAmount", "subTotal", "SGSTAmount", "CGSTAmount", "vendorAddress", "vendorGSTIN", "vendorName", "vendorEmail", "totalGSTAmount"]
+
+#delete-reasons
+deleteReasonOptions=[{ "id": "1", "name": "Not an Invoice" }, { "id": "2", "name": "Poor quality Invoice" }, { "id": "3", "name": "Mandatory field Missing" }, { "id": "4", "name": "Error in Invoice" }, { "id": "5", "name": "VendorMasterData Incorrect" }, { "id": "6", "name": "Multiple Invoices in file" }, { "id": "7", "name": "Others" }]
+
+#purge document
+KeysToBeDeletedFromDocColl={"invoiceNumber":1,"totalAmount":1,"vendorId":1,"invoiceDate":1,"currency":1, "bar_qr_data":1 }
+KeysToBeDeletedFromResultColl={"documentInfo":1, "documentLineItems":1, "vendorId":1 }
+
+#statusChangeEventConfig for Microsoft Eventgrid
+statusChangeEventConfig={"rootPath": "https://swiggyinstastatuschange.centralindia-1.eventgrid.azure.net/api/events","aegSasKey":"NUXVmhvNpzoYXFBfb/LW/rJTy9w+gKw2Xbxsjyl1GWk=","topic": "/subscriptions/3d34cc1f-baa0-4d2e-80b3-95a1834afe2f/resourceGroups/TAPP/providers/Microsoft.EventGrid/topics/swiggyInstaStatusChange","subject": "Microsoft.EventGrid/topics/swiggyInstaStatusChange","eventType": "Microsoft.EventGrid","eventTrigger": 1}

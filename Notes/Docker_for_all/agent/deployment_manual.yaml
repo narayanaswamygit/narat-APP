@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pAIges_agent
+  labels:
+    app: pAIges_agent
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: pAIges_agent
+  template: 
+    metadata:
+      labels: 
+        app: pAIges_agent
+    spec:
+      containers:
+        - name: pAIges_agent
+          image: paigesacr.azurecr.io/app1/paiges_extract:2.0.RELEASE
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          resources:
+            limits:
+              cpu: 700m
+            requests:
+              cpu: 400m
+--- 

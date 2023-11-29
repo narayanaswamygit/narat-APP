@@ -1,0 +1,86 @@
+For new machine:
+
+sudo apt install curl
+
+Steps for creating new server instance for codebase:
+
+1. Copy entire TAPP3.0_UI to different folder
+2. /src/app server8888.js rename as server 9999.js, edit the js file
+**** ports names need to be edited in client side config.json; and in .env, config.js, server.js
+3. nano .env edit ports, and mongodb name(UI points to database by DB mentioned in .env)
+4. "mongoDBJs" in config.js (same DB name need to be mentioned in config.js) to be edited ( only db name to be changed as it is being picked from DB scripts, rest can be unchanged)
+5. Go to scripts
+6. run node schema.js, node mockdata.js  {commented const=faker in mockData.js}
+7. forever start -o out.log -e err_server.log server.js
+8. forever start -o cron.log -e err_cron.log cronScheduler.js
+9. sudo lsof -i tcp:808
+
+10.go to client and do npm install
+
+Rename UI label
+client/src/app/components/login -> nano login.component.html  -edit
+npm install (where we have package.json is not installed or not updated)
+ng build --prod
+
+ng build --configuration=production
+
+
+Troubleshoot: nodesass:
+rm -rf package-lock.json node_modules
+npm cache clean --force
+npm i --unsafe-perm node-sass
+
+npm install 
+
+
+#### MONGO DB
+
+service mongod stop
+
+systemctl enable mongod
+
+service mongod start
+
+systemctl restart mongod
+
+ps -ef | grep mongo
+
+******
+preprocessor_api_host in config.js 
+
+1. Storage provider to local blob
+2. 
+
+forever start -o out.log -e err_server.log server.js
+forever start -o cron.log -e err_cron.log cronScheduler.js
+
+forever start -o out.log -e err_server.log server8686.js
+forever start -o cron.log -e err_cron.log cronScheduler8686.js
+
+forever start -o out.log -e err_server.log server9999.js
+forever start -o cron.log -e err_cron.log cronScheduler9999.js
+
+forever start -o out.log -e err_server.log server8888.js
+forever start -o cron.log -e err_cron.log cronScheduler8888.js
+
+Remove data from mongo 
+
+db.getCollectionNames().forEach( function(collection_name) { 
+    if (collection_name.indexOf("system.") == -1) {
+        print ( ["Removing: ", db[collection_name].count({}), " documents from ", collection_name].join('') );
+        db[collection_name].remove({}); 
+    }
+});
+
+
+mongo not started:
+==================
+~$ sudo service mongod stop
+
+~$ sudo rm /var/lib/mongodb/mongod.lock
+
+~$ sudo mongod --repair --dbpath /var/lib/mongodb
+
+~$ sudo mongod --fork --logpath /var/lib/mongodb/mongodb.log --dbpath /var/lib/mongodb
+
+~$ sudo service mongod start

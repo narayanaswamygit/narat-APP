@@ -1,0 +1,29 @@
++++++We are providing a authentication and authorization for Nginx URLs+++++
+
+apt install apache2-utils -y
+
+htpasswd -c /etc/nginx/.htpasswd <username>
+
+###Password prmopt will appear###
+Give passwords
+
+cd /etc/nginx/conf.d
+
+###open any configuration file###
+
+Add below two lines to backend service urls:
+
+auth_basic "admin area";
+auth_basic_user_file /etc/nginx/.htpasswd;
+
+Save and exit from file
+
+sudo nginx -t 
+
+systemctl restart nginx
+
+####The below URL is for multiple services with multiple Authentication and Authorization####
+
+https://www.cyberciti.biz/faq/nginx-password-protect-directory-with-nginx-htpasswd-authentication/  
+
+

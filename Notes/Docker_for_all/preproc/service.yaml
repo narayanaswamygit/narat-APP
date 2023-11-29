@@ -1,0 +1,14 @@
+# Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: preprocessor-loadbalancer-service
+  labels:
+    app: preprocessor
+spec:
+  selector:
+    app: preprocessor
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8080

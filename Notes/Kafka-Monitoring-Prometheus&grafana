@@ -1,0 +1,65 @@
+################################### KAFKA AND ZOOKEEPER MONITORING USING PROMETHEUS AND GRAFANA ##########################
+##########################################################################################################################
+
+//Prometheus Installation:
+# Download prometheus binary files
+wget https://github.com/prometheus/prometheus/releases/download/v2.45.0/prometheus-2.45.0.linux-amd64.tar.gz
+
+tar -xvf prometheus-2.45.0.linux-amd64.tar.gz
+cd prometheus-2.45.0.linux-amd64
+./prometheus --config.file=prometheus.yml  ==> To start prometheus server
+
+
+//Kafka Exporters Binary files download:
+# For Ubuntu 20.04.6 LTS
+wget https://github.com/danielqsj/kafka_exporter/releases/download/v1.7.0/kafka_exporter-1.7.0.linux-amd64.tar.gz   
+
+tar -xvf kafka_exporter-1.7.0.linux-amd64.tar.gz
+cd kafka_exporter-1.7.0.linux-amd64
+
+*By default kafka exporter runs on port 9308
+*To start kafka_exporters before that we need to start kafka server
+./kafka_exporter --kafka.server=localhost:9092   ==> to start kafka exporter
+
+### ADD these KAFKA Exporters and ZOOKEEPER Exporters in prometheus.yml file to scrape the metrics of kafka exporter
+  - job_name: 'kafka'
+    static_configs:
+      - targets: ['localhost:9308']  # Replace with the address of your Kafka Exporter
+
+  - job_name: 'zookeeper'
+    static_configs:
+      - targets: ['localhost:2181']  # Replace with the address of your ZooKeeper Exporter  
+###############################################################################################################
+
+* Restart prometheus server now
+
+
+Importing KAFKA Dashboard:
+============================
+
+https://grafana.com/grafana/dashboards/18276-kafka-dashboard/
+
+**Copy the yml file correctly to config.yml
+* Stop kafka server 
+
+
+## Download this jmx_prometheus_javaagent-0.3.0.jar from https://github.com/prometheus/jmx_exporter
+
+* export KAFKA_OPTS=-javaagent:/home/kafka_2.13-3.5.0/jmx_prometheus_javaagent-0.3.0.jar=6660:/home/kafka_2.13-3.5.0/config.yml
+* Start the Kafka server again
+
+=> cd /home/kafka_2.13-3.5.0/
+=> nohup bin/kafka-server-start.sh config/server.properties > broker-kafka.log &
+
+
+
+
+
+
+
+
+
+
+
+
+

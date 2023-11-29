@@ -1,0 +1,20 @@
+ssl-certificate-generation:
+===========================
+> download .csr and generate-private.key
+> Now modify the generate-private.key follow below steps
+> open generate-private.key in Notepad ++ and on top select Encoding change UTF-8-BOM to UTF-8
+> save the file
+> Now go to godaddy and download zip file which contains 2 crt files and 1 pem file
+> Extract the zip file
+> Now copy the modified generate-private.key into this unzipped folder
+> Now openssl and run below command
+> pkcs12 -export -out D:\taotapp-bcp.com\taotapp-bcp.pfx -inkey D:\taotapp-bcp.com\generated-private.key -in D:\taotapp-bcp.com\28449f5dbedf3531.crt
+> It asks for password generate a strong password from browser and paste it 
+> Verify the "Verifying - Enter Export Password:" by enetring the password again
+> Now a .pfx file is generated i.e., the SSL certificate.
+ 
+
+Follow below link:
+===================
+https://community.godaddy.com/s/question/0D53t00006Vm7YeCAJ/convert-crt-to-pfx-for-azure
+

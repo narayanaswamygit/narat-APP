@@ -1,0 +1,14 @@
+# Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-loadbalancer-service
+  labels:
+    app: pAIges_agent
+spec:
+  selector:
+    app: pAIges_agent
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8080

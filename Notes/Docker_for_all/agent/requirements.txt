@@ -1,0 +1,7 @@
+klein==21.8.0
+Pillow==8.4.0
+opencv-python==4.5.4.58
+imageio==2.10.4
+requests==2.26.0
+python-dateutil==2.8.2
+pdf2image==1.14.0

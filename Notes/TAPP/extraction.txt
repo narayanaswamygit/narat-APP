@@ -1,0 +1,18 @@
+###Standard_D2as_v4
+
+export ACR_REGISTRY=swiggyacr.azurecr.io
+export ACR_NAMESPACE=app1
+export ACR_IMAGE_NAME=paiges_extract
+export ACR_IMAGE_TAG=26.0.RELEASE
+echo $ACR_REGISTRY, $ACR_NAMESPACE, $ACR_IMAGE_NAME, $ACR_IMAGE_TAG
+
+docker tag paiges_extract:26.0.RELEASE  $ACR_REGISTRY/$ACR_NAMESPACE/$ACR_IMAGE_NAME:$ACR_IMAGE_TAG
+
+docker push $ACR_REGISTRY/$ACR_NAMESPACE/$ACR_IMAGE_NAME:$ACR_IMAGE_TAG
+
+az aks get-credentials --resource-group rg-tapp --name aks-swiggy-extraction
+
+az aks update -n aks-swiggy-extraction -g RG-TAPP --attach-acr swiggyACR
+
+
+

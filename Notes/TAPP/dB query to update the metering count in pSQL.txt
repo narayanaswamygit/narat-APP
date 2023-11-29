@@ -1,0 +1,52 @@
+select * from subscription_call_records LIMIT 10;
+
+ SELECT DISTINCT master.sub_id,
+    COALESCE(sum(calls.pages_requested) OVER (PARTITION BY master.sub_id), 0::bigint, sum(calls.pages_requested) OVER (PARTITION BY master.sub_id)) AS pages_requested,
+    COALESCE(count(calls.auth_token) OVER (PARTITION BY master.sub_id), 0::bigint, count(calls.auth_token) OVER (PARTITION BY master.sub_id)) AS docs_requested,
+    master.allotted,
+    master.end_date,
+    master.type
+   FROM subscription_master master
+     LEFT JOIN subscription_auth_tokens auth USING (sub_id)
+     LEFT JOIN ( SELECT subscription_call_records.auth_token,
+            subscription_call_records.pages_requested
+           FROM subscription_call_records
+          WHERE subscription_call_records.status = 1) calls USING (auth_token);
+
+SELECT subscription_call_records.auth_token,
+            subscription_call_records.pages_requested
+           FROM subscription_call_records 
+          WHERE subscription_call_records.status = 1
+		  --and subscription_call_records.modified_time >= '2023-02-15 00:00:00'
+
+SELECT *
+           FROM subscription_call_records 
+          WHERE
+		  subscription_call_records.modified_time >= '2023-02-14 00:00:00' and
+		  subscription_call_records.modified_time <= '2023-02-14 23:59:59'
+		  order by modified_time desc
+
+SELECT *
+           FROM subscription_call_records_test
+          WHERE
+		  modified_time >= '2023-02-14 00:00:00' and
+		  modified_time <= '2023-02-14 23:59:59' and
+		  status = 1
+		  order by modified_time desc
+
+
+update subscription_call_records set status = 1
+where auth_token in ('34f85a00-e6b9-4a3f-8aa4-382bab015d74',
+'a4d1aee9-aad3-4342-84dd-ec69dead630e',
+'1ee0c915-61b7-4f39-a30b-e224753c5a95',
+'7aced20c-a37f-42a3-b21a-be81730d7fd1',
+'ac78bddc-b28d-4bfe-99f5-784ad84748c0',
+'f37e95be-e40e-4303-bac4-e83b66cf0547',
+'06697ccc-6de6-42c6-ac44-1dd4e1930a6c')
+
+
+
+update subscription_call_records set status = 0
+where modified_time <= '2023-02-14 23:59:59'
+
+

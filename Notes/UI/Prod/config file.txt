@@ -1,0 +1,168 @@
+const dotenv = require('dotenv');
+dotenv.config();
+const config = {
+    defaultResultSize: Number(process.env.tapp_result_size) || 50,
+    confidenceThreshold: Number(process.env.tapp_confidence_threshold) || 70,
+    autoPreprocessing: process.env.tapp_auto_processing || "true",
+    autoExtraction: process.env.tapp_auto_extraction || "false",
+    preProcessorAPIHost: process.env.tapp_preprocessor_api_host || "http://127.0.0.1:7777",
+    extractionAPIHost: process.env.tapp_extraction_api_host || "http://127.0.0.1:9200",
+    storageProvider: process.env.tapp_storage_provider || "localblob",
+    storageAccessKey: process.env.tapp_storage_access_key || "tapp2data",
+    storageAccessSecret: process.env.tapp_storage_access_secret || "C38zpM1CfufDmqcelnI/VvjIUpB6Fyoj8QUtsKrFs4f7pAKCpzMFRClSOhJW1thKSOdZB7Jm3OWughlSKEsuxg==",
+    storageContainer: process.env.tapp_storage_container || "import",
+    storageContainerAssets: process.env.tapp_storage_asset_container || "assets",
+    storageSampleInvoicesContainer: process.env.tapp_storage_sampleInvoices_container || "sampleinvoices",
+    storageRegion: process.env.tapp_storage_region || "",
+
+    //database name and host
+    mongoDBHost: process.env.tapp_mongodb_host || "mongodb://127.0.0.1:27017",
+    mongoDBName: process.env.tapp_mongodb_db_name || "swgInsta_test",
+    tappUIAPIHost: process.env.tapp_api_host || "http://172.22.0.10:80",
+
+    //rpa starts here
+    rpaIntegrationMode: process.env.rpa_integration_mode || "cloud", // Possible values are 'cloud', 'on-premise'
+    rpaAuthenticationDomain: process.env.rpa_authentication_domain || "https://account.uipath.com/",
+    rpaOrchestratorDomain: process.env.rpa_orchestrator_domain || "https://platform.uipath.com/",
+    rpaJobIds: process.env.rpa_job_ids, // RPA job ids to listen for in webhooks. Leave this blank to listen for all jobs
+
+    // RPA Cloud integration configuration keys
+    rpaAccountLogicalName: process.env.rpa_account_logical_name || "taosmyhlxp",
+    rpaTenantLogicalName: process.env.rpa_tenant_logical_name || "TAODefaulta1n6222679",
+    rpaTenantOrganizationID: process.env.rpa_tenant_organization_id || 100469,
+    rpaRefreshToken: process.env.rpa_refresh_token || "lkVBXp5KOVt-AbUfEDqUFRCdo0DfgAwdnLDWMqIm057Bl",
+    rpaClientId: process.env.rpa_client_id || "8DEv1AMNXczW3y4U15LL3jYf62jK93n5",
+
+    // RPA On-Premise integration configuration keys
+    rpaTenantName: process.env.rpa_tenant_name,
+    rpaUserName: process.env.rpa_user_name,
+    rpaPassword: process.env.rpa_password,
+    reviewSubmitURL: process.env.tapp_review_submit_url || "",
+
+    //Network paths - Root location
+    localBlobStorage: process.env.tapp_localBlobStorage || "/mnt/swginstadrive",
+
+    //static files url
+    localStaticPath: process.env.tapp_images_static_url || "/static",
+
+    //download results
+    downloadResultsAPI: process.env.tapp_download_results_api || "http://127.0.0.1:7777/download/results",
+    downloadResultPath: process.env.downloadResultPath || "/downloads/",
+
+    getInvoiceTiffURL: process.env.tapp_invoice_tiff_url || "http://127.0.0.1:8081",
+    queryAddWorkflowAPIURL: process.env.query_add_workflow_API_URL || "http://180.151.86.53:90/api/TAPP/SaveTappData",
+    queryDeleteWorkflowAPIURL: process.env.query_delete_workflow_API_URL || "http://180.151.86.53:90/api/DeleteTAPP/DeleteQueryData",
+
+    // mongo atlas
+    //databaseUrl: 'mongodb+srv://kanak:kanak_optimal@cluster0.shybo.mongodb.net/paiges_kgs?retryWrites=true&w=majority&useNewUrlParser=true&useUnifiedTopology=true',
+    databaseUrl: process.env.mongo_Atlas_Host_Url || 'mongodb+srv://pAIges_DB:r1JliLnVh37DzRux@cluster0.fbbiy.mongodb.net/demo_db?retryWrites=true&w=majority&useNewUrlParser=true&useUnifiedTopology=true',
+
+    //others
+    clientAddress: process.env.clientAddress || "http://172.22.0.10:80",
+    emailServiceProvider: process.env.emailServiceProvider || 'gmail',
+    senderEmailId: process.env.senderEmailId || "yourgamil@gmail.com",
+    senderPassword: process.env.senderPassword || "password",
+
+    //for send email
+    emailEndPoint: process.env.emailEndPoint || 'https://paigessendemail.centralindia-1.eventgrid.azure.net/api/events',
+    aegsaskey: process.env.mailSendKey || 'iVEOjpKIERR9gvo4psYRGpOMD3wRbEucerYHGdYxbSU=',
+
+    //encryption/decryption
+    secret_key: process.env.encryptionKey || 'PAIGESISPOWEREDBYTAOAUTOMATION2022',
+    tokenId: process.env.decryptionTokenId || 'vtucupWt0pZBVYcPVgzQ/A==',
+
+    //extraction-assist
+    formatIdentifierRootPath: process.env.formatIdentifierRootPath || 'http://127.0.0.1:6666/format_identifier/',
+    pathFinderRootPath: process.env.pathFinderRootPath || 'http://127.0.0.1:6666/path_finder/',
+    pathFinderCorrectionsPath: process.env.pathFinderCorrectionsPath || 'http://127.0.0.1:6666/corrections/',
+    RAISE_TICKET_EMAIL: process.env.RAISE_TICKET_EMAIL || 'amit.rajan@taoautomation.com',
+
+    // common
+    ALERT_TIMEOUT: process.env.ALERT_TIMEOUT || 5000, // 5sec
+    AUTO_REFRESH_IN: process.env.AUTO_REFRESH_IN || 5000, // 5sec
+    HOW_IT_WORKS_URL: process.env.HOW_IT_WORKS_URL || 'https://www.taoautomation.com/what-we-do/productized-solutions/tao-paiges/',
+    MaximumAllowedPages: process.env.maximumAllowedPages || 50,
+    MaximumFileSizeLimit: process.env.maximumFileSizeLimit || 5,
+    AdminEmailId: process.env.adminEmailId || 'pAIges.admin@taoautomation.com',
+    DEFAULT_EA_TIMEGAP: process.env.DEFAULT_EA_TIMEGAP || 90, // 3months
+
+    //reviewer
+    ACTIVITY_TIME_REVIEWER: process.env.ACTIVITY_TIME_REVIEWER || 300, //300 seconds
+    ALERT_DISSMISS_REVIEWER: process.env.ALERT_DISSMISS_REVIEWER || 60,//60 seconds
+    AUTO_UNLOCK_DOCUMENT_IN: process.env.AUTO_UNLOCK_DOCUMENT_IN || 30, // 30 mins
+
+    //client-specific
+    SIGNUP_PAGE_VISIBILITY: process.env.SIGNUP_PAGE_VISIBILITY || 0,
+    DASHBOARD_VISIBILITY: process.env.DASHBOARD_VISIBILITY || 0,
+    PROCESSING_VISIBILITY: process.env.PROCESSING_VISIBILITY || 1,
+    SETTINGS_VISIBILITY: process.env.SETTINGS_VISIBILITY || 1,
+    ACTIONS_VISIBILITY: process.env.ACTIONS_VISIBILITY || 0,
+    POINT_AND_SHOOT_VISIBILITY: process.env.POINT_AND_SHOOT_VISIBILITY || 0,
+    EXTRACTION_ASSIST_VISIBILITY: process.env.EXTRACTION_ASSIST_VISIBILITY || 0,
+    EXTERNAL_LOGS_VISIBILITY: process.env.EXTERNAL_LOGS_VISIBILITY || 1,
+    DETAILED_LOGS: process.env.DETAILED_LOGS || 1,
+    LOGS_LENGTH: process.env.LOGS_LENGTH || 2000,
+    DAILY_CONSUMPTION_LIMIT_VISIBILITY: process.env.DAILY_CONSUMPTION_LIMIT_VISIBILITY || 0,
+    FAQ_PAGE_VISIBILITY: process.env.FAQ_PAGE_VISIBILITY || 0,
+    CARDVIEW_VISIBILITY: process.env.CARDVIEW_VISIBILITY || 0,
+    VIEWER_ROLE_VISIBILITY: process.env.VIEWER_ROLE_VISIBILITY || 0,
+    TIPS_VISIBILITY: process.env.TIPS_VISIBILITY || 0,
+    LINE_ITEMS_VISIBILITY: process.env.LINE_ITEMS_VISIBILITY || 0,
+    ADMIN_UPLOAD_VISIBILITY: process.env.ADMIN_UPLOAD_VISIBILITY || 0,
+
+    //Admin Role Limitation
+    ALL_ROLES_VISIBILITY_FOR_ADMIN: process.env.ALL_ROLES_VISIBILITY_FOR_ADMIN || 0,
+
+    //session
+    SESSION_EXPIRE_TIME: process.env.SESSION_EXPIRE_TIME || 2,
+    SESSION_EXPIRE_TIME_UNIT: process.env.SESSION_EXPIRE_TIME_UNIT || 'hours',
+
+    //mergeTometadata
+    mergeFieldsResultAndMetadata: process.env.tapp_merge_result_metadata || "invoiceNumber,invoiceDate,totalAmount",
+
+    //business Rule Validation
+    businessRuleValidationAPIRootPath: process.env.businessRuleValidation_APIRootPath || "http://127.0.0.1:6666/",
+    callbackUrlForValidationAPI: process.env.callbackUrlForValidationAPI || 'http://172.22.0.10:80',
+    BUZ_RULE_API_VISIBILITY: process.env.BUZ_RULE_API_VISIBILITY || 1,
+
+    //VAPT
+
+    INVALID_FORM_TAGS: JSON.parse(process.env.INVALID_FORM_TAGS) || ['<script', '/script', 'script>', '<title', '/title', 'title>', '<import', '/import', 'import>', '<link', '/link', 'link>'],
+
+    //upload-related
+    orgTypeOptions: process.env.tapp_orgtype_options || '[{"orgTypeId":"ORG_001", "orgType":"Swiggy"}]',
+    docTypeOptions: process.env.tapp_doctype_options || '[{"docTypeId":"DOC_001", "docType":"INVOICE"}]',
+
+    // Sub folders - list all sub folders in the above directory. Also include preprocessor directory in this list.
+    localFileTypesAllowed: process.env.tapp_localFileTypesAllowed || '{"pdf":"application/pdf","tiff":"image/tiff"}',
+    localSubFoldersAllowed: process.env.tapp_localSubFolders_allowed || '{"import":"/import/","assets":"/assets/","sampleinvoices":"/sampleinvoices/","preprocessor":"/preprocessor/","downloads":"/downloads/"}',
+
+
+    //dashboard
+    organizationConfig: process.env.organizationConfig || '{"orgName":"KGS", "orgID":"19012", "expiry":"June 10 2022", "pageQuota":10}',
+
+    //black-listed domains
+    BLACKLISTED_DOMAINS: JSON.parse(process.env.BLACKLISTED_DOMAINS) || ['gmail', 'outlook', 'prontonmail', 'aol', 'zoho', 'iCloud', 'yahoo', 'gmx'],
+
+    //not-extracted fields list
+    unExtractedfields: JSON.parse(process.env.unExtractedfields) || ['invoiceNumber', 'poNumber', 'invoiceDate', 'totalAmount', 'subTotal', 'SGSTAmount', 'CGSTAmount', 'vendorAddress', 'vendorGSTIN', 'vendorName', 'vendorEmail', 'totalGSTAmount'],
+
+    //delete-reasons
+    deleteReasonOptions: JSON.parse(process.env.deleteReasonOptions) || [{ "id": "1", "name": "Not an Invoice" }, { "id": "2", "name": "Poor quality Invoice" }, { "id": "3", "name": "Mandatory field Missing" }, { "id": "4", "name": "Error in Invoice" }, { "id": "5", "name": "VendorMasterData Incorrect" }, { "id": "6", "name": "Multiple Invoices in file" }, { "id": "7", "name": "Others" }],
+
+    //purge document
+    KeysToBeDeletedFromDocColl: JSON.parse(process.env.KeysToBeDeletedFromDocColl) || { invoiceNumber: 1, totalAmount: 1, vendorId: 1, invoiceDate: 1, currency: 1, bar_qr_data: 1 },
+    KeysToBeDeletedFromResultColl: JSON.parse(process.env.KeysToBeDeletedFromResultColl) || { documentInfo: 1, documentLineItems: 1, vendorId: 1 },
+
+    //statusChangeEventConfig for Microsoft Eventgrid
+    statusChangeEventConfig: JSON.parse(process.env.statusChangeEventConfig) || {
+        rootPath: 'https://swiggyinstastatuschangetest.centralindia-1.eventgrid.azure.net/api/events',
+        aegSasKey: 'GuxcTySGLMdmyzWhi27rL9ndyE/s++a7reQSuTVMlPc=',
+        topic: '/subscriptions/3d34cc1f-baa0-4d2e-80b3-95a1834afe2f/resourceGroups/TAPP/providers/Microsoft.EventGrid/topics/swiggyInstaStatusChangeTest',
+        subject: 'Microsoft.EventGrid/topics/swiggyInstaStatusChangeTest',
+        eventType: 'Microsoft.EventGrid',
+        eventTrigger: 1
+    },
+};
+
+module.exports = config;

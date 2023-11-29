@@ -1,0 +1,150 @@
+const config = {
+    defaultResultSize: process.env.tapp_result_size || 50,
+    confidenceThreshold: process.env.tapp_confidence_threshold || 70,
+    autoPreprocessing: process.env.tapp_auto_processing || "true",
+    autoExtraction: process.env.tapp_auto_extraction || "false",
+    preProcessorAPIHost: process.env.tapp_preprocessor_api_host || "http://localhost:6601",
+    extractionAPIHost: process.env.tapp_extraction_api_host || "http://localhost:8081",
+    storageProvider: process.env.tapp_storage_provider || "localblob",
+    storageAccessKey: process.env.tapp_storage_access_key || "tapp2data",
+    storageAccessSecret: process.env.tapp_storage_access_secret ||
+        "C38zpM1CfufDmqcelnI/VvjIUpB6Fyoj8QUtsKrFs4f7pAKCpzMFRClSOhJW1thKSOdZB7Jm3OWughlSKEsuxg==",
+    storageContainer: process.env.tapp_storage_container || "import",
+    storageContainerAssets: process.env.tapp_storage_asset_container || "assets",
+    storageSampleInvoicesContainer: process.env.tapp_storage_sampleInvoices_container || "sampleinvoices",
+    storageRegion: process.env.tapp_storage_region || "",
+
+    //database name and host
+    mongoDBHost: process.env.tapp_mongodb_host || "mongodb://localhost:27017",
+    mongoDBName: process.env.tapp_mongodb_db_name || "sand_db",
+    tappUIAPIHost: process.env.tapp_api_host || "http://localhost:7777",
+
+    //rpa starts here
+    rpaIntegrationMode: process.env.rpa_integration_mode || "cloud", // Possible values are 'cloud', 'on-premise'
+    rpaAuthenticationDomain: process.env.rpa_authentication_domain || "https://account.uipath.com/",
+    rpaOrchestratorDomain: process.env.rpa_orchestrator_domain || "http://localhost:8081",
+    rpaJobIds: process.env.rpa_job_ids, // RPA job ids to listen for in webhooks. Leave this blank to listen for all jobs
+
+    // RPA Cloud integration configuration keys
+    rpaAccountLogicalName: process.env.rpa_account_logical_name || "taosmyhlxp",
+    rpaTenantLogicalName: process.env.rpa_tenant_logical_name || "TAODefaulta1n6222679",
+    rpaTenantOrganizationID: process.env.rpa_tenant_organization_id || 100469,
+    rpaRefreshToken: process.env.rpa_refresh_token,
+    rpaClientId: process.env.rpa_client_id,
+
+    // RPA On-Premise integration configuration keys
+    rpaTenantName: process.env.rpa_tenant_name,
+    rpaUserName: process.env.rpa_user_name,
+    rpaPassword: process.env.rpa_password,
+    reviewSubmitURL: process.env.tapp_review_submit_url || "",
+
+    //Network paths - Root location
+    localBlobStorage: process.env.tapp_localBlobStorage || "C:/Users/admin/Kanak/Projects/Angular/Official/TaoAutomation/Working Copy/tap-files",
+
+    // Sub folders - list all sub folders in the above directory. Also include preprocessor directory in this list.
+    localSubFoldersAllowed: process.env.tapp_localSubFolders_allowed ||
+        '{"import":"/import/","assets":"/assets/","sampleinvoices":"/sampleinvoices/","preprocessor":"/preprocessor/","downloads":"/downloads/"}',
+
+    localFileTypesAllowed: process.env.tapp_localFileTypesAllowed || '{"pdf":"application/pdf","tiff":"image/tiff"}',
+    //static files url
+    localStaticPath: process.env.tapp_images_static_url || "/static",
+
+    //API to call for download results
+    downloadResultsAPI: process.env.tapp_download_results_api || "http://52.172.153.247:6601/download/results",
+    downloadResultPath: process.env.downloadResultPath || "/downloads/",
+
+    getInvoiceTiffURL: process.env.tapp_invoice_tiff_url || "http://localhost:8081",
+    mergeFieldsResultAndMetadata: process.env.tapp_merge_result_metadata || "invoiceNumber, invoiceDate, totalAmount",
+    queryAddWorkflowAPIURL: process.env.query_add_workflow_API_URL || "http://180.151.86.53:90/api/TAPP/SaveTappData",
+    queryDeleteWorkflowAPIURL: process.env.query_delete_workflow_API_URL || "http://180.151.86.53:90/api/DeleteTAPP/DeleteQueryData",
+
+    orgTypeOptions: process.env.tapp_orgtype_options || '[{"orgTypeId":"ORG_001", "orgType":"ORG_TYPE_001"}, {"orgTypeId":"ORG_002", "orgType":"Org 002"},{"orgTypeId":"ORG_003", "orgType":"Org 003"}, {"orgTypeId":"ORG_004", "orgType":"Org 004"}]',
+    docTypeOptions: process.env.tapp_doctype_options || '[{"docTypeId":"DOC_001", "docType":"INVOICE-US"}, {"docTypeId":"DOC_002", "docType":"INVOICE-INDIA"},{"docTypeId":"DOC_003", "docType":"INVOICE-OTHERS"},{"docTypeId":"DOC_004", "docType":"PASSPORT-INDIA"},{"docTypeId":"DOC_005", "docType":"PASSPORT-OTHERS"},{"docTypeId":"DOC_006", "docType":"AADHAR-INDIA"}]',
+    organizationConfig: process.env.organizationConfig || '{"orgName":"KGS", "orgID":"19012", "expiry":"June 10 2022", "pageQuota":10}',
+
+    // mongo atlas
+    //databaseUrl: 'mongodb+srv://kanak:kanak_optimal@cluster0.shybo.mongodb.net/paiges_kgs?retryWrites=true&w=majority&useNewUrlParser=true&useUnifiedTopology=true',
+    databaseUrl: process.env.mongo_Atlas_Host_Url || 'mongodb+srv://pAIges_DB:r1JliLnVh37DzRux@cluster0.fbbiy.mongodb.net/demo_db?retryWrites=true&w=majority&useNewUrlParser=true&useUnifiedTopology=true',
+
+    //others
+    clientAddress: process.env.clientAddress || "https://paiges.ai",
+    localclientAddress: "http://localhost:4200/",
+    emailServiceProvider: 'gmail',
+    senderEmailId: "yourgamil@gmail.com",
+    senderPassword: "password",
+
+    //for send email
+    emailEndPoint: 'https://paigessendemail.centralindia-1.eventgrid.azure.net/api/events',
+    aegsaskey: process.env.mailSendKey || 'iVEOjpKIERR9gvo4psYRGpOMD3wRbEucerYHGdYxbSU=',
+
+    //encryption/decryption
+    secret_key: process.env.encryptionKey || 'PAIGESISPOWEREDBYTAOAUTOMATION2022',
+    tokenId: process.env.decryptionTokenId || 'vtucupWt0pZBVYcPVgzQ/A==',
+
+    //extraction-assist
+    formatIdentifierRootPath: process.env.formatIdentifierRootPath || 'http://52.172.153.247:4444/format_identifier/',
+    pathFinderRootPath: process.env.pathFinderRootPath || 'http://52.172.153.247:4444/path_finder/',
+    pathFinderCorrectionsPath: process.env.pathFinderCorrectionsPath || 'http://52.172.153.247:4444/corrections/',
+    unExtractedfields: process.env.unExtractedfields || ['invoiceNumber', 'poNumber', 'invoiceDate', 'totalAmount', 'subTotal', 'SGSTAmount', 'CGSTAmount', 'vendorAddress', 'vendorGSTIN', 'vendorName', 'vendorEmail', 'totalGSTAmount'],
+    RAISE_TICKET_EMAIL: process.env.RAISE_TICKET_EMAIL || 'amit.rajan@taoautomation.com',
+
+    // common
+    SIGNUP_PAGE_VISIBILITY: process.env.SIGNUP_PAGE_VISIBILITY || 0,
+    DASHBOARD_VISIBILITY: process.env.DASHBOARD_VISIBILITY || 0,
+    PROCESSING_VISIBILITY: process.env.PROCESSING_VISIBILITY || 1,
+    SETTINGS_VISIBILITY: process.env.SETTINGS_VISIBILITY || 1,
+    ALERT_TIMEOUT: process.env.ALERT_TIMEOUT || 5000, // 5sec
+    AUTO_REFRESH_IN: process.env.AUTO_REFRESH_IN || 5000, // 5sec
+    BLACKLISTED_DOMAINS: process.env.BLACKLISTED_DOMAINS || ['gmail', 'outlook', 'prontonmail', 'aol', 'zoho', 'iCloud', 'yahoo', 'gmx'],
+    HOW_IT_WORKS_URL: process.env.HOW_IT_WORKS_URL || 'https://www.taoautomation.com/what-we-do/productized-solutions/tao-paiges/',
+    MaximumAllowedPages: process.env.maximumAllowedPages || 10,
+    MaximumFileSizeLimit: process.env.maximumFileSizeLimit || 5,
+    AdminEmailId: process.env.adminEmailId || 'pAIges.admin@taoautomation.com',
+    deleteReasonOptions: process.env.deleteReasonOptions ||'[{ "id": "1", "name": "Not an Invoiceed" }, { "id": "2", "name": "Already Processed" }]',  
+    DEFAULT_EA_TIMEGAP: process.env.DEFAULT_EA_TIMEGAP || 90, // 3months
+
+    //reviewer
+    ACTIVITY_TIME_REVIEWER: process.env.ACTIVITY_TIME_REVIEWER || 300, //300 seconds
+    ALERT_DISSMISS_REVIEWER: process.env.ALERT_DISSMISS_REVIEWER || 60,//60 seconds
+    AUTO_UNLOCK_DOCUMENT_IN: process.env.AUTO_UNLOCK_DOCUMENT_IN || 30, // 30 mins
+
+    //VAPT
+    INVALID_FORM_TAGS: process.env.INVALID_FORM_TAGS || ['<script', '/script', 'script>', '<title', '/title', 'title>', '<import', '/import', 'import>', '<link', '/link', 'link>'],
+
+    //client-specific
+    ACTIONS_VISIBILITY: process.env.ACTIONS_VISIBILITY || 0,
+    POINT_AND_SHOOT_VISIBILITY: process.env.POINT_AND_SHOOT_VISIBILITY || 0,
+    EXTRACTION_ASSIST_VISIBILITY: process.env.EXTRACTION_ASSIST_VISIBILITY || 0,
+    EXTERNAL_LOGS_VISIBILITY: process.env.EXTERNAL_LOGS_VISIBILITY || 1,
+    DETAILED_LOGS: process.env.DETAILED_LOGS || 1,
+    LOGS_LENGTH: process.env.LOGS_LENGTH || 2000,
+    DAILY_CONSUMPTION_LIMIT_VISIBILITY: process.env.DAILY_CONSUMPTION_LIMIT_VISIBILITY || 0,
+    FAQ_PAGE_VISIBILITY: process.env.FAQ_PAGE_VISIBILITY || 0,
+    CARDVIEW_VISIBILITY: process.env.CARDVIEW_VISIBILITY || 0,
+    VIEWER_ROLE_VISIBILITY: process.env.VIEWER_ROLE_VISIBILITY || 0,
+
+    //session
+    SESSION_EXPIRE_TIME: process.env.SESSION_EXPIRE_TIME || 2,
+    SESSION_EXPIRE_TIME_UNIT: process.env.SESSION_EXPIRE_TIME_UNIT || 'hours',
+
+    //purge
+    KeysToBeDeletedFromDocColl: { invoiceNumber: 1, fileName: 1, totalAmount: 1, vendorId: 1, invoiceDate: 1, currency: 1, bar_qr_data: 1 },
+    KeysToBeDeletedFromResultColl: { documentInfo: 1, documentLineItems: 1, vendorId: 1 },
+
+    //statusChangeEventConfig for Microsoft Eventgrid 
+    statusChangeEventConfig: {
+        rootPath: process.env.swiggyRootPath || 'https://swiggyinstastatuschange.centralindia-1.eventgrid.azure.net/api/events',
+        aegSasKey: process.env.aegSasKey || 'NUXVmhvNpzoYXFBfb/LW/rJTy9w+gKw2Xbxsjyl1GWk=',
+        topic: process.env.topic || '/subscriptions/3d34cc1f-baa0-4d2e-80b3-95a1834afe2f/resourceGroups/TAPP/providers/Microsoft.EventGrid/topics/swiggyInstaStatusChange',
+        subject: process.env.subject || 'Microsoft.EventGrid/topics/swiggyInstaStatusChange',
+        eventType: process.env.eventType || 'Microsoft.EventGrid',
+        eventTrigger: process.env.eventTrigger || 1
+    },
+
+    //business Rule Validation
+    businessRuleValidationAPIRootPath: process.env.businessRuleValidation_APIRootPath || "http://127.0.0.1:4444/",
+    callbackUrlForValidationAPI: process.env.callbackUrlForValidationAPI || 'http://localhost:4200',
+    BUZ_RULE_API_VISIBILITY: process.env.BUZ_RULE_API_VISIBILITY || 1
+};
+
+module.exports = config;

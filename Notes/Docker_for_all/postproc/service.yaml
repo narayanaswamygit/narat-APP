@@ -1,0 +1,14 @@
+#Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: postprocessor-loadbalancer-service
+  labels:
+    app: postprocessor
+spec:
+  selector:
+    app: postprocessor
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8080

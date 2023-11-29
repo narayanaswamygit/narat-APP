@@ -1,0 +1,115 @@
+1. python --version
+2. sudo apt install -y python3.8
+
+3.Installation of pip
+=======================
+sudo apt-get install -y python3-pip
+
+4.Installation of Ghostscript
+==============================
+sudo apt-get install -y ghostscript
+ghostscript -v
+
+5. Installation of Tesseract
+=============================
+sudo apt-get install -y tesseract-ocr
+tesseract -v
+
+6.Installation of Virtual environment
+=============================== 
+sudo apt install -y virtualenv
+
+7.Create virtual environment (for Preprocessor - venv)
+=========================================================== 
+virtualenv -p python3.8 venv
+
+8.Activate Virtual Environment
+=============================
+source venv/bin/activate
+
+9. Cloning the repository
+========================== 
+git clone step
+
+10. Installation of Dependant Packages
+======================================= 
+cat requirements.txt | xargs -n 1 pip install
+
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python3 get-pip.py --force-reinstall
+
+{{
+  pip show pyopenssl 
+  if it less than 22.0.0 then do next step
+  pip install --ignore-installed pyOpenSSL
+  pip install pyOpenSSL
+}}
+
+pip install smart-open==5.2.1
+
+pip install requests==2.23.0
+
+pip install opencv-python==4.6.0.66
+
+11. Installing Levenshtein for fuzzyway
+========================================
+   * Download the dependencies
+   ----------------------------
+    apt-get install yum
+
+    sudo apt-get install -y python3 python-dev python3-dev \
+    build-essential libssl-dev libffi-dev \
+    libxml2-dev libxslt1-dev zlib1g-dev \
+    python3-pip 
+
+    sudo apt-get install -y python3.8-dev
+
+   * Installing the Levenshtein
+    --------------------------- 
+           pip install python-Levenshtein
+
+12. Installing Poppler
+======================= 
+sudo apt-get install python3-poppler
+sudo apt-get install -y poppler-utils
+
+13. install pyzbar:
+================
+pip install pyzbar
+sudo apt-get install -y zbar-tools
+
+14. pip install polling
+
+15. pip install typing-extensions --upgrade
+
+16. sudo apt-get install -y python3-tk
+
+17. pip install python-magic
+
+18. pip install xlrd
+
+19. pip install openpyxl
+
+20. pip install xlrd-2.0.1
+
+21. pip install et-xmlfile-1.1.0
+
+22. pip install openpyxl-3.0.10
+
+23. pip install tifftools
+
+24. pip install -U pypdf2
+
+25. pip install python-dotenv
+
+apt-get update
+
+apt-get install ffmpeg libsm6 libxext6  -y
+
+
+17. nohup python preProcSync.py > preproc.log &
+
+18. python start_kafka_consumer.py
+
+
+    

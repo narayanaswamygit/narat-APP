@@ -1,0 +1,53 @@
+
+# starting root user
+sudo -i
+
+# kafka server starting
+cd /home/kafka_2.13-3.0.0/
+
+nohup bin/zookeeper-server-start.sh config/zookeeper.properties > server-kafka.log &
+## tail -f server-kafka.log
+nohup bin/kafka-server-start.sh config/server.properties > broker-kafka.log &
+## tail -f broker-kafka.log
+
+# starting virtual env
+cd /home/TAPP-Demo
+source venv_paiges/bin/activate	
+
+# Starting UI services
+cd /home/TAPP-Demo/PAIGES_UI/src/app/
+
+forever start -o out.log -e err.log server.js
+forever start -o cron.log -e err.log cronScheduler.js
+
+#Starting Extraction code
+
+1 External
+
+cd /home/TAPP-Demo/PAIGES_EXTRACTION/external_docker/src
+nohup python __init__.py > init_external.log &
+
+2 Extraction
+
+cd /home/TAPP-Demo/PAIGES_EXTRACTION/extraction_docker/src
+nohup python __init__.py > init_extraction.log &
+
+# Running Model 
+
+cd /home/TAPP-Demo/PAIGES_EXTRACTION/model_docker/src
+nohup python __init__.py > init_model.log &
+
+# Starting Preprocessing 
+
+####cd /home/TAPP-Demo/PAIGES_CLIENT/app
+cd /home/TAPP-Demo/pAIges_client
+nohup python preProcSync.py > preproc.log &
+
+# Statrting Kafka Service
+python start_kafka_consumer.py
+
+
+
+
+
+

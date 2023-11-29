@@ -1,0 +1,41 @@
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pAIges_Ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/ssl-redirect: false
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /agent
+        pathType: Prefix
+        backend:
+          service:
+            name: pAIges_agent-loadbalancer-service
+            port:
+              number: 80
+      - path: /preprocessor
+        pathType: Prefix
+        backend:
+          service:
+            name: preprocessor-loadbalancer-service
+            port:
+              number: 80
+      - path: /postprocessor
+        pathType: Prefix
+        backend:
+          service:
+            name: postprocessor-loadbalancer-service
+            port:
+              number: 80
+      - path: /kafka
+        pathType: Prefix
+        backend:
+          service:
+            name: kafka-loadbalancer-service
+            port:
+              number: 80

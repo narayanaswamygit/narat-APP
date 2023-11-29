@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postprocessor
+  labels:
+    app: postprocessor
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: postprocessor
+  template: 
+    metadata:
+      labels: 
+        app: postprocessor
+    spec:
+      containers:
+        - name: postprocessor
+          image: paigesacr.azurecr.io/app1/paiges_extract:2.0.RELEASE
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          resources:
+            limits:
+              cpu: 700m
+            requests:
+              cpu: 400m
+--- 

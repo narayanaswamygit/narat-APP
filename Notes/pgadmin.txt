@@ -1,0 +1,14 @@
+select * from allowed_machines;
+insert into allowed_machines(sub_id,mac_id) values('0e62382c-4ae7-4dff-97a1-d720a931f01a','45015787925255'); = preprocess_flask hardcoded
+insert into allowed_machines(sub_id,mac_id) values('29af20d9-4649-4455-bd0c-dee706a774b4','105852647403622'); = Extraction
+insert into allowed_machines(sub_id,mac_id) values('29af20d9-4649-4455-bd0c-dee706a774b4','52748636578918');
+select * from subscription_master;
+insert into subscription_master(sub_id,allotted,end_date,status,started_date,client) values('8aaf4ce9-7ac6-44a7-b8dc-a060b488c886','3000000','2025-09-05 00:00:00',true,'2022-09-05 00:00:00','swgInstaTest');
+select * from storage_account;
+insert into storage_account(sub_id,access_key,account_name,container_name) values('8aaf4ce9-7ac6-44a7-b8dc-a060b488c886','q061i+V0b9DGdgf+YWef1R110gZbKblmTKhWVN5XmeZm4rfl7ATOrPHm40SfxQQHq/Sfc3+Q+NMBQcqow/uYjQ==','submasterstorage','8aaf4ce9-7ac6-44a7-b8dc-a060b488c886');
+***************************************************************************************************************************
+**********allowed_machines two times enter cheyali one with normal server mac_id and another with 105852647403622**********
+***************************************************************************************************************************
+
+
+_F58Q~sWC-x5DPQgAoxbQFpmKduW2YNhbqAeFdh8

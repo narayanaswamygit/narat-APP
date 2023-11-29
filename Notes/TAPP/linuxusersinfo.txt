@@ -1,0 +1,10 @@
+root ALL=(ALL) ALL
+user ALL=(ALL) /usr/sbin/useradd ==>
+user ALL=(ALL) NOPASSWD:  /usr/sbin/useradd   ==> It won't ask for password
+user ALL=(ALL) NOPASSWD:  ALL  ==> Giving access to all commands
+user ALL=(ALL) NOPASSWD:  /usr/sbin/useradd
+
+Always open sudoers file like this ==> visudo
+
+/etc/passwd ==> stores user information
+/etc/shadow ==> stores password information

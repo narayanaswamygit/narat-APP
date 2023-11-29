@@ -1,0 +1,16 @@
+Do this in home directory?
+
+sudo apt update
+sudo apt install -y default-jdk
+wget https://dlcdn.apache.org/kafka/3.1.0/kafka_2.13-3.1.0.tgz
+tar -xvf kafka_2.13-3.1.0.tgz
+cd kafka_2.13-3.1.0/
+
+Start kafka (need to check how to start this as a service)
+
+./bin/zookeeper-server-stop.sh
+nohup bin/zookeeper-server-start.sh config/zookeeper.properties > server-kafka.log &
+./bin/kafka-server-stop.sh
+nohup bin/kafka-server-start.sh config/server.properties > broker-kafka.log &
+
+

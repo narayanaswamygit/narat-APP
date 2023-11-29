@@ -1,0 +1,79 @@
+tapp_preprocessor_api_host=http://127.0.0.1:7777
+tapp_extraction_api_host=http://127.0.0.1:9200
+tapp_api_host=http://172.22.0.10:80
+tapp_listen_change_streams=true
+tapp_mongodb_db_name=swgtest_db
+tapp_mongodb_host=mongodb://127.0.0.1:27017
+tapp_storage_provider=localblob
+tapp_orgtype_options = '[{"orgTypeId":"org-001", "orgType":"Swiggy"}]'
+tapp_doctype_options = '[{"docTypeId":"DOC_001", "docType":"Invoice"}]'
+
+
+
+rpa_authentication_domain= https://account.uipath.com/
+rpa_orchestrator_domain=https://platform.uipath.com/
+rpa_account_logical_name=taosmyhlxp
+rpa_tenant_logical_name=TAODefaulta1n6222679
+rpa_client_id=8DEv1AMNXczW3y4U15LL3jYf62jK93n5
+rpa_refresh_token=lkVBXp5KOVt-AbUfEDqUFRCdo0DfgAwdnLDWMqIm057Bl
+rpa_tenant_organization_id= 100469
+tapp_localBlobStorage=/mnt/swginstadrive
+tapp_images_static_url=/static
+tapp_download_results_api=http://127.0.0.1:7777
+formatIdentifierRootPath=http://127.0.0.1:6666/format_identifier/
+pathFinderRootPath=http://127.0.0.1:6666/path_finder/
+pathFinderCorrectionsPath=http://127.0.0.1:6666/corrections/
+mailSendKey=iVEOjpKIERR9gvo4psYRGpOMD3wRbEucerYHGdYxbSU=
+clientAddress=http://172.22.0.10:80
+blacklistedDomains:['gmail', 'outlook', 'prontonmail', 'aol', 'zoho', 'iCloud', 'yahoo', 'gmx']
+maximumAllowedPages:100
+maximumFileSizeLimit:5
+adminEmailId:pAIges.admin@taoautomation.com
+howItWorksURL:https://www.taoautomation.com/what-we-do/productized-solutions/tao-paiges/
+encryptionKey=PAIGESISPOWEREDBYTAOAUTOMATION2022
+decryptionTokenId=vtucupWt0pZBVYcPVgzQ/A==
+mongo_Atlas_Host_Url=mongodb+srv://pAIges_DB:r1JliLnVh37DzRux@cluster0.fbbiy.mongodb.net/demo_db?retryWrites=true&w=majority&useNewUrlParser=true&useUnifiedTopology=true=http://172.22.0.10:9201
+
+
+deleteReasonOptions=[{"id":"1","name":"Not an Invoice"}, {"id":"2","name":"Poor quality Invoice"}, {"id":"3","name":"Mandatory field Missing"}, {"id":"4","name":"Error in Invoice"}, {"id":"5","name":"VendorMasterData Incorrect"}, {"id":"5","name":"Multiple Invoices in file"}, {"id":"7","name":"Others"}]
+
+
+
+
+
+
+swiggyRootPath=https://swiggyinstastatuschangetest.centralindia-1.eventgrid.azure.net/api/events
+aegSasKey=GuxcTySGLMdmyzWhi27rL9ndyE/s++a7reQSuTVMlPc=
+topic=/subscriptions/3d34cc1f-baa0-4d2e-80b3-95a1834afe2f/resourceGroups/TAPP/providers/Microsoft.EventGrid/topics/swiggyInstaStatusChangeTest
+subject=Microsoft.EventGrid/topics/swiggyInstaStatusChangeTest
+eventType=Microsoft.EventGrid
+eventTrigger=1
+
+
+ACTIVITY_TIME_REVIEWER=300
+ALERT_DISSMISS_REVIEWER=60
+AUTO_UNLOCK_DOCUMENT_IN=30
+businessRuleValidation_APIRootPath=http://127.0.0.1:6666/
+callbackUrlForValidationAPI=http://172.22.0.10:80
+BUZ_RULE_API_VISIBILITY=1
+
+ACTIONS_VISIBILITY=0
+POINT_AND_SHOOT_VISIBILITY=0
+SIGNUP_PAGE_VISIBILITY=0
+EXTRACTION_ASSIST_VISIBILITY=0
+EXTERNAL_LOGS_VISIBILITY=1
+DETAILED_LOGS=1
+LOGS_LENGTH=2000
+DAILY_CONSUMPTION_LIMIT_VISIBILITY=0
+FAQ_PAGE_VISIBILITY=0
+CARDVIEW_VISIBILITY=0
+DASHBOARD_VISIBILITY=0
+PROCESSING_VISIBILITY=1
+SETTINGS_VISIBILITY=1
+ALERT_TIMEOUT=5000
+AUTO_REFRESH_IN=5000
+BLACKLISTED_DOMAINS=['gmail', 'outlook', 'prontonmail', 'aol', 'zoho', 'iCloud', 'yahoo', 'gmx']
+HOW_IT_WORKS_URL=https://www.taoautomation.com/what-we-do/productized-solutions/tao-paiges/
+maximumAllowedPages=10
+maximumFileSizeLimit=5
+adminEmailId=pAIges.admin@taoautomation.com

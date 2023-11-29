@@ -1,0 +1,55 @@
+https://www.arubacloud.com/tutorial/how-to-configure-a-smtp-mail-server-with-postfix-on-ubuntu-20-04.aspx
+please follow above link for configuring mail server in ubuntu 
+
+# Installation of postfix:
+
+sudo apt install postfix
+
+Select "Internet Site" and press ok
+
+In next Tab leave domain name as it is (default)
+
+''''''
+cd /etc/postfix
+
+sudo cp /etc/postfix/main.cf /etc/postfix/main.cf.backup
+
+vim main.cf
+
+""""""""
+# Main server DNS
+
+myhostname = pAIges.4vs543022n5uhm21geikqhd1jh.rx.internal.cloudapp.net   # hostname = from old config file that main.cf.backup
+
+mydomain = 4vs543022n5uhm21geikqhd1jh.rx.internal.cloudapp.net            # mydomain = While configuring Postfix the "System mail name": paiges.com 
+
+myorigin = $mydomain                                     # The domain and host name will be generated default while installing postfix package.
+
+#Parameters for the interface used for listening ports:
+
+inet_interfaces = all
+
+inet_protocols = ipv4
+
+mydestination = $myhostname, localhost.$mydomain, localhost, $mydomain
+
+mynetworks = 127.0.0.0/8
+
+relay_domains = $mydestination
+    
+#  Backing directory for saving mailboxes
+
+home_mailbox = Maildir/
+
+""""""
+
+> systemctl restart postfix
+
+> apt install mailutils -y
+
+> Sending mail:
+> echo -e "Hello_World" | mail -s "Testing" "narayana@example.com"
+
+
+
+

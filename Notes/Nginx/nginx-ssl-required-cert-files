@@ -1,0 +1,12 @@
+Create a folder /etc/nginx/ssl
+chmod 700 /etc/nginx/ssl
+download bundle from Godaddy also csr and privatekey files
+Upload these files to the server in /etc/nginx/ssl
+give 700 permissions to all files in /etc/nginx/ssl follow below steps:
+ 1. cd /etc/nginx/ssl
+ 2. chmod 700 *
+You have two crt files create a chained.crt from those files follow below steps
+cat cat 8b3f3bc41170ce59.crt gd_bundle-g2-g1.crt > chained.crt
+chmod 700 chained.crt
+
+Place these paths in configuration file

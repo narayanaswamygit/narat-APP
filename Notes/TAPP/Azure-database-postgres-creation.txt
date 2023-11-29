@@ -1,0 +1,61 @@
+Azure Database for PostgreSQL server
+====================================
+
+Resource type:
+--------------
+Single server
+
+Basic: 1 vCore
+Storage: 50 GB
+
+
+Disable ssl setting
+
+In pgadmin need to run these steps:
+====================================
+
+Create postgressql database:
+-----------------------------
+General Tab:
+------------
+Give database name and remaining leave defaults
+
+Definition Tab:
+---------------
+Encoding - UTF8
+Collation - English_United States. 1252
+Character type - English_United States. 1252
+Connection limit - -1
+Leave remaining defaults and Tabs also
+
+Click on Save 
+
+Steps:
+======
+1. Create allowed_machines
+2. Install extension uuid-ossp
+3. Create upd_call_records function 
+4. Create call_log table
+5. Create subscription_master table
+6. Create subscription_call_records table
+7. Create subscription_auth_tokens table
+8. Create storage_account table
+9. Create stage_result table
+10. Create a Trigger Function encrypt_reviewer
+11. Create blinkit_mail_records table
+12. Create blinkit_document_metadata table
+13. Create blinkit_document_result table
+14. Create blinkit_rpa_metadata table
+15. Create auth_by_sub_id view
+16. Create paiges_daily_usage view
+17. Create paiges_usage view
+18. Create purge_view view
+19. Create blinkit_locked_more_than_5mins view
+20. Create blinkit_posting_data view
+21. Create conv_epoch(timestr text) function
+22. Create blinkit_dailyReport view
+23. Create blinkit_dailyAvgReport view
+24. Create blinkit_db_dump view
+25. Create conv_str_epoch(text) function
+26. Create blinkit_rpa_metadata_view view
+

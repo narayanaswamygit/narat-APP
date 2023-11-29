@@ -1,0 +1,19 @@
+db.createUser(
+{
+    user: "bcp-non-po",
+    pwd: "Bcpmongononp",
+    roles: [
+              { role: "userAdminAnyDatabase", db: "admin" },
+              { role: "readWriteAnyDatabase", db: "admin" },
+              { role: "dbAdminAnyDatabase", db: "admin" },
+              { role: "clusterAdmin", db: "admin" }
+           ]
+})
+
+
+mongo --port 27017 -u "paigesadm" -p "Mongopaigesadm" --authenticationDatabase "admin"
+
+mongo --port 27017 -u "bcp-non-po" -p "Bcpmongononp" --authenticationDatabase "admin"
+
+tapp_mongodb_host=mongodb://bcp-non-po:Bcpmongononp@10.0.0.8:27017
+tapp_mongodb_db_name=bcp_db

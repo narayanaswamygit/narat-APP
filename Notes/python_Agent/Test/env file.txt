@@ -1,0 +1,8 @@
+{
+"UI_SERVER":"http://172.22.0.10:80",
+"SUBSCRIBER_ID":"70d514ac-2c3a-44b0-9f34-bd33be82093a",
+"UI_ROOT_FOLDER":"/mnt/swginstadrive",
+"AGENT_PORT":"8888",
+"APP_NAME":"PAIGES",
+"STORAGE_TYPE":"FOLDER"
+}
